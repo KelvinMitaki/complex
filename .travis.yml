@@ -14,3 +14,12 @@ after_success:
   - docker build -t kevinmitaki/complex-nginx ./nginx
   - docker build -t kevinmitaki/complex-server ./server
   - docker build -t kevinmitaki/complex-worker ./worker
+
+  # LOG IN TO THE DOCKER CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  # PUSH IMAGES TO DOCKER HUB
+  - docker push kevinmitaki/complex-client
+  - docker push kevinmitaki/complex-nginx
+  - docker push kevinmitaki/complex-server
+  - docker push kevinmitaki/complex-worker
