@@ -2,6 +2,8 @@ version: "3"
 services:
   postgres:
     image: "postgres:latest"
+    environment:
+      - POSTGRES_PASSWORD=somepassword
   redis:
     image: "redis:latest"
   server:
@@ -16,6 +18,6 @@ services:
       - REDIS_PORT=6379
       - PG_HOST=postgres
       - PG_PORT=5432
-      - PG_PASSWORD=postgres_password
       - PG_DATABASE=postgres
       - PG_USER=postgres
+      - POSTGRES_PASSWORD=somepassword

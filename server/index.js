@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const pgClient = new Pool({
   host: process.env.PG_HOST,
   port: process.env.PG_PORT,
-  password: process.env.PG_PASSWORD,
+  password: process.env.POSTGRES_PASSWORD,
   database: process.env.PG_DATABASE,
   user: process.env.PG_USER
 });
