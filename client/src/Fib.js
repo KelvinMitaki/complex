@@ -46,7 +46,8 @@ export class Fib extends Component {
           Object.keys(this.state.values).map(key => {
             return (
               <div key={key}>
-                for index {key}, I calculated {this.state.values[key]}
+                for index {key}, I calculated{" "}
+                {parseInt(this.state.values[key]).toLocaleString()}
               </div>
             );
           })}
