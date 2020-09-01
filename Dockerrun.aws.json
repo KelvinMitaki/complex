@@ -18,6 +18,13 @@
       "image": "kevinmitaki/complex-worker",
       "hostname": "worker",
       "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "kevinmitaki/complex-nginx",
+      "hostname": "nginx",
+      "essential": true
     }
-  ]
+  ],
+  "links": ["client", "server"]
 }
