@@ -7,6 +7,7 @@ services:
   redis:
     image: "redis:latest"
   nginx:
+    restart: always
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
@@ -28,6 +29,8 @@ services:
       - PG_USER=postgres
       - POSTGRES_PASSWORD=somepassword
   client:
+    stdin_open: true
+    tty: true
     build:
       dockerfile: Dockerfile.dev
       context: ./client
