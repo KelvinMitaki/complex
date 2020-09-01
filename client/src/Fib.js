@@ -42,6 +42,8 @@ export class Fib extends Component {
         {this.state.seenIndexes.length !== 0 &&
           this.state.seenIndexes.map(({ number }) => number).join(", ")}
         <h3>CALCULATED VALUES</h3>
+        {console.log(this.state.values)}
+        {console.log(this.state.seenIndexes)}
       </div>
     );
   }

@@ -8,15 +8,15 @@ import OtherPage from "./OtherPage";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Link to="/">Home</Link>
-        <Link to="/otherpage">Other Page</Link>
-      </header>
       <BrowserRouter>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <Link to="/">Home</Link>
+          <Link to="/otherpage">Other Page</Link>
+        </header>
         <Route exact path="/" component={Fib} />
         <Route exact path="/otherpage" component={OtherPage} />
       </BrowserRouter>
