@@ -43,13 +43,13 @@ export class Fib extends Component {
           this.state.seenIndexes.map(({ number }) => number).join(", ")}
         <h3>CALCULATED VALUES</h3>
         {Object.keys(this.state.values).length !== 0 &&
-          console.log(
-            Object.keys(this.state.values).map(key => ({
-              key,
-              value: this.state.values[key]
-            }))
-          )}
-        {console.log(this.state.seenIndexes)}
+          Object.keys(this.state.values).map(key => {
+            return (
+              <div key={key}>
+                for index {key}, I calculated {this.state.values[key]}
+              </div>
+            );
+          })}
       </div>
     );
   }
