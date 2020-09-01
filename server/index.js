@@ -49,12 +49,24 @@ app.post("/values", async (req, res) => {
   if (parseInt(index) > 40) {
     return res.status(422).send("index too high");
   }
-  redisClient.hset("values", index, "Nothing yet!");
-  redisPublisher.publish("insert", index);
+  await redisClient.hset("values", index, "Nothing yet!");
+  await redisPublisher.publish("insert", index);
   await pgClient.query("INSERT INTO values(number) VALUES($1)", [index]);
   res.send({ working: true });
 });
 
+const sub = redisClient.duplicate();
+
+const fib = index => {
+  if (index < 2) return 1;
+  return fib(index - 1) + fib(index - 2);
+};
+
+sub.on("message", (channel, message) => {
+  redisClient.hset("values", message, fib(parseInt(message)));
+});
+
+sub.subscribe("insert");
 app.listen(5000, err =>
   err ? console.log(err) : console.log(`server started on port 5000`)
 );
