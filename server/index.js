@@ -54,3 +54,7 @@ app.post("/values", async (req, res) => {
   pgClient.query("INSERT INTO values(number) VALUES($1)", [index]);
   res.send({ working: true });
 });
+
+app.listen(5000, err =>
+  err ? console.log(err) : console.log(`server started on port 5000`)
+);
