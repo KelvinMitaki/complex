@@ -17,3 +17,18 @@ spec:
           image: kevinmitaki/complex-server
           ports:
             - containerPort: 5000
+          env:
+            - name: PG_HOST
+              value:
+            - name: PG_PORT
+              value:
+            - name: POSTGRES_PASSWORD
+              value:
+            - name: PG_DATABASE
+              value:
+            - name: PG_USER
+              value:
+            - name: REDIS_HOST
+              value:
+            - name: REDIS_PORT
+              value:
