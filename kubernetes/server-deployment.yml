@@ -19,16 +19,16 @@ spec:
             - containerPort: 5000
           env:
             - name: PG_HOST
-              value:
+              value: postgres-cluster-ip-service
             - name: PG_PORT
-              value:
+              value: 5432
             - name: POSTGRES_PASSWORD
               value:
             - name: PG_DATABASE
-              value:
+              value: postgres
             - name: PG_USER
-              value:
+              value: postgres
             - name: REDIS_HOST
-              value:
+              value: redis-cluster-ip-service
             - name: REDIS_PORT
-              value:
+              value: 6379
