@@ -15,5 +15,5 @@ spec:
       containers:
         - name: client
           image: kevinmitaki/complex-client
-          port:
+          ports:
             - containerPort: 3000

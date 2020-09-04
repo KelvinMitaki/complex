@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: client-cluster-ip-service
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     component: web
   ports:
